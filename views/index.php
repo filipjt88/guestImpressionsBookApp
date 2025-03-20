@@ -17,15 +17,20 @@
         <form action="../actions/register.php" method="POST">
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" name="username" class="form-control" required>
+                <input type="text" name="username" class="form-control">
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" name="email" class="form-control" required>
+                <input type="email" name="email" class="form-control">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" required>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" placeholder="Please enter password..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button id="togglePassword" class="btn btn-dark" type="button" id="button-addon2">
+                        <i class="bi bi-eye"></i>
+                    </button>
+                </div>
             </div>
             <button type="submit" class="btn btn-sm btn-success">Register</button>
             <p class="mt-3">Already have an account? <a href="login.php" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Login</a></p>
@@ -36,7 +41,7 @@
 
 <!-- Bootstrap Icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-
+<script src="../js/main.js"></script>
 </body>
 </html>
 
