@@ -10,7 +10,24 @@
 </head>
 <body>
     
-    
+     <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-6 offset-3">
+              <h2 class="text-center">Guest book</h2>
+        <form action="../actions/add_message.php" method="POST">
+            <div class="mb-3">
+                <label for="guest_name" class="form-label">Username:</label>
+                <input type="text" name="guest_name" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message . . .</label>
+                <textarea name="message" class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-sm btn-primary">Send message</button>
+        </form>
+        </div>
+      </div>
+    </div>
 
 
 

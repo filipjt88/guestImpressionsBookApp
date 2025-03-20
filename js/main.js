@@ -1,3 +1,4 @@
+// Show and Hide password input
 const showPass = document.getElementById("togglePassword").addEventListener("click", function () {
     let passwordField = document.getElementById("password");
     let icon = this.querySelector("i");
