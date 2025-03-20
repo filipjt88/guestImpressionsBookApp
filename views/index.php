@@ -26,7 +26,7 @@
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Please enter password..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <input type="password" id="password" class="form-control" placeholder="Please enter password..." aria-label="Recipient's username" aria-describedby="button-addon2">
                     <button id="togglePassword" class="btn btn-dark" type="button" id="button-addon2">
                         <i class="bi bi-eye"></i>
                     </button>
