@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     $username = trim($_POST['username']);
     $email    = trim($_POST['email']);
     $password = trim($_POST['password']);
-    $confirm_passwprd = trim($_POST['confirm_password']);
+    $password_confirm = trim($_POST['password_confirm']);
 
     if(empty($username)) {
         $errors['username'] = "Username is required!";
@@ -21,8 +21,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     } elseif(strlen($password) < 6) {
         $errors['password'] = "Password must have at least 6 characters!";
     }
-    if($password !== $confirm_passwprd) {
-        $errors['confirm_password'] = "The passwords don't match!";
+    if($password !== $password_confirm) {
+        $errors['password_confirm'] = "The passwords don't match!";
     }
 
     if(empty($errors)) {

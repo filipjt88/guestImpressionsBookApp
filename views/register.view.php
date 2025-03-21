@@ -1,3 +1,8 @@
+<?php
+
+require_once '../actions/regiser.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +23,7 @@
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
                 <input type="text" name="username" class="form-control">
+                <small class="text-danger"><?= php $errors['username'] ?? '' ?></small>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
