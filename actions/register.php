@@ -15,6 +15,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 
     if(!isset($_POST['username']) || empty($_POST['username'])) {
         $username_error = "<p class='alert alert-danger text-danger d-inline-block p-1'>Username is required!</p>";
+        array_push($errors, $username_error);
+    } else {
+        $username = $_POST['username'];
     }
 
     if(empty($email)) {
