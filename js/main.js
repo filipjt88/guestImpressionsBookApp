@@ -1,5 +1,5 @@
 // Show and Hide password input
-const showPass = document.getElementById("togglePassword").addEventListener("click", function () {
+const password = document.getElementById("togglePassword").addEventListener("click", function () {
     let passwordField = document.getElementById("password");
     let icon = this.querySelector("i");
 
@@ -13,3 +13,24 @@ const showPass = document.getElementById("togglePassword").addEventListener("cli
         icon.classList.add('bi-eye');
     }
 });
+
+
+const confirm_password = document.getElementById("togglePasswordConfirm").addEventListener("click", function () {
+    let passwordFieldConfirm = document.getElementById("password_confirm");
+    let iconConfirm = this.querySelector("i");
+
+    if (passwordFieldConfirm.type === 'password') {
+        passwordFieldConfirm.type = 'text';
+        iconConfirm.classList.remove('bi-eye');
+        iconConfirm.classList.add('bi-eye-slash');
+    } else {
+        passwordFieldConfirm.type = 'password';
+        iconConfirm.classList.remove('bi-eye-slash');
+        iconConfirm.classList.add('bi-eye');
+    }
+});
+
+
+
+
+
