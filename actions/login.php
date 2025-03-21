@@ -18,5 +18,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
         $email = $_POST['email'];
     }
 
+    if(!isset($_POST['password']) || empty($_POST['password'])) {
+        $password_error = "<p class='alert alert-danger text-danger d-inline-block p-1'>Password is required!</p>";
+        array_push($errors, $password_error);
+    } else {
+        $password = $_POST['password'];
+    }
+
 
 }
