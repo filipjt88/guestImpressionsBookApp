@@ -1,8 +1,11 @@
 <?php
-session_start();
 require '../core/db.php';
 
-$errors = [];
+session_start();
+$_SESSION['errors'] = $errors;
+header("Location: ../views/register.view.php");
+exit;
+
 
 if($_SERVER['REQUEST_METHOD'] == "POST") {
     $username = trim($_POST['username']);
@@ -10,9 +13,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     $password = trim($_POST['password']);
     $password_confirm = trim($_POST['password_confirm']);
 
-    if(empty($username)) {
-        $errors['username'] = "Username is required!";
+    if(!isset($_POST['username']) || empty($_POST['username'])) {
+        $username_error = "<p class='alert alert-danger text-danger d-inline-block p-1'>Username is required!</p>";
     }
+
     if(empty($email)) {
         $errors['email'] = "Email is required!";
     }

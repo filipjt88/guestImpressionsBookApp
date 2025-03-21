@@ -1,4 +1,8 @@
-<?php require 'register_handler.php'; ?>
+<?php
+session_start();
+$errors = $_SESSION['errors'] ?? []; // Ako nema grešaka, koristi prazan niz
+unset($_SESSION['errors']); // Očisti greške nakon prikaza
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,12 +18,14 @@
         <div class="row">
             <div class="col-md-6 offset-3">
                 <h2 class="text-center">Register</h2>
-            <!-- <div class="alert alert-danger"></div> -->
         <form action="../actions/register.php" method="POST">
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" name="username" class="form-control" value="<?= htmlspecialchars($_POST['username'] ?? '') ?>">
-                <small class="text-danger"><?= php $errors['username'] ?? '' ?></small>
+                <input type="text" name="username" class="form-control" value="<?php if(isset($username_error)) echo $username_error; ?>">
+                <p class="text-danger"><?php if(isset($username_error)): ?>
+                    <?php echo $username_error; ?>
+                    <?php endif; ?>
+                    </p>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
