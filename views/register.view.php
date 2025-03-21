@@ -1,8 +1,4 @@
-<?php
-
-require_once '../actions/regiser.php';
-
-?>
+<?php require 'register_handler.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +18,7 @@ require_once '../actions/regiser.php';
         <form action="../actions/register.php" method="POST">
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" name="username" class="form-control">
+                <input type="text" name="username" class="form-control" value="<?= htmlspecialchars($_POST['username'] ?? '') ?>">
                 <small class="text-danger"><?= php $errors['username'] ?? '' ?></small>
             </div>
             <div class="mb-3">
