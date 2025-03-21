@@ -20,8 +20,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
         $username = $_POST['username'];
     }
 
-    if(empty($email)) {
-        $errors['email'] = "Email is required!";
+    if(!isset($_POST['email']) || empty($_POST['email'])) {
+        $email_error = "<p class='alert alert-danger text-danger d-inline-block p-1'>Email is required!</p>";
+        array_push($errors, $email_error);
+    } else {
+        $email = $_POST['email'];
     }
     if(empty($password)) {
         $errors['password'] = "Password is required!";
