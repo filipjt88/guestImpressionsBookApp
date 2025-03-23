@@ -11,7 +11,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     $password = trim($_POST['password']);
 
      if(!isset($_POST['email']) || empty($_POST['email'])) {
-        $username_error = "<p class='alert alert-danger text-danger d-inline-block p-1'>Email is required!</p>";
+        $email_error = "<p class='alert alert-danger text-danger d-inline-block p-1'>Email is required!</p>";
         array_push($errors, $email_error);
     } else {
         $email = $_POST['email'];

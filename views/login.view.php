@@ -1,3 +1,8 @@
+<?php
+session_start();
+$errors = $_SESSION['errors'] ?? []; // Ako nema grešaka, koristi prazan niz
+unset($_SESSION['errors']); // Očisti greške nakon prikaza
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +22,8 @@
         <form action="../actions/login.php" method="POST">
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" name="email" class="form-control" value="<?php if(!isset($email_error)) echo $email_error; ?>">
-                <p class="alert alert-danger"><?php if(!isset($email_error)) : ?>
+                <input type="email" name="email" class="form-control" value="<?php if(isset($email_error)) echo $email_error; ?>">
+                <p class="alert alert-danger"><?php if(isset($email_error)) : ?>
                 <?php echo $email_error; ?>
                 <?php endif; ?>
                 </p>
