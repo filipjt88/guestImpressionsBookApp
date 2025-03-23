@@ -26,6 +26,14 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     } else {
         $email = $_POST['email'];
     }
+
+      if(!isset($_POST['password']) || empty($_POST['password'])) {
+        $password_error = "<p class='alert alert-danger text-danger d-inline-block p-1'>Email is required!</p>";
+        array_push($errors, $password_error);
+    } else {
+        $password = $_POST['password'];
+    }
+
     if(empty($password)) {
         $errors['password'] = "Password is required!";
     } elseif(strlen($password) < 6) {

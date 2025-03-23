@@ -31,6 +31,10 @@ unset($_SESSION['errors']); // Očisti greške nakon prikaza
                 <label for="email" class="form-label">Email</label>
                 <input type="email" name="email" class="form-control">
             </div>
+            <p class="text-danger"><?php if(isset($email_error)): ?>
+                    <?php echo $email_error; ?>
+                    <?php endif; ?>
+                    </p>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <div class="input-group mb-3">
@@ -40,6 +44,10 @@ unset($_SESSION['errors']); // Očisti greške nakon prikaza
                     </button>
                 </div>
             </div>
+            <p class="text-danger"><?php if(isset($password_error)): ?>
+                    <?php echo $password_error; ?>
+                    <?php endif; ?>
+                    </p>
             <div class="mb-3">
                 <label for="password" class="form-label">Password confirm</label>
                 <div class="input-group mb-3">
