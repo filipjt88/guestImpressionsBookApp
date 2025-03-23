@@ -32,13 +32,13 @@ $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <div class="container mt-5">
-        <h2 class="text-center">Poruke</h2>
-        <p><a href="my_messages.php">🔙 Moje poruke</a> | <a href="../actions/logout.php">🚪 Odjava</a></p>
+        <h2 class="text-center">Message</h2>
+        <p><a href="my_messages.php">🔙 My messages</a> | <a href="../actions/logout.php">🚪 Logout</a></p>
 
         <!-- Forma za pretragu poruka -->
         <form action="index.php" method="get" class="mb-4">
             <input type="text" name="search" class="form-control" placeholder="Pretraži poruke..." value="<?= htmlspecialchars($search_term) ?>">
-            <button type="submit" class="btn btn-primary mt-2">🔍 Pretraži</button>
+            <button type="submit" class="btn btn-primary mt-2">🔍 Search</button>
         </form>
 
         <!-- Prikaz poruka -->
@@ -48,15 +48,15 @@ $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <div class="card-body">
                         <p><strong><?= htmlspecialchars($msg['firstname']) . ' ' . htmlspecialchars($msg['lastname']) ?></strong>:</p>
                         <p><?= htmlspecialchars($msg['message']) ?></p>
-                        <small class="text-muted">Dodato: <?= $msg['created_at'] ?></small>
+                        <small class="text-muted">Add: <?= $msg['created_at'] ?></small>
                         <br>
-                        <a href="edit_message.php?id=<?= $msg['id'] ?>" class="btn btn-warning btn-sm">✏ Uredi</a>
-                        <a href="delete_message.php?id=<?= $msg['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Da li ste sigurni?')">🗑 Obriši</a>
+                        <a href="edit_message.php?id=<?= $msg['id'] ?>" class="btn btn-warning btn-sm">✏ Edit</a>
+                        <a href="delete_message.php?id=<?= $msg['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">🗑 Delete</a>
                     </div>
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
-            <p>Bez rezultata pretrage.</p>
+            <p>No search results.</p>
         <?php endif; ?>
     </div>
 </body>
