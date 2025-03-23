@@ -7,11 +7,11 @@
 }
 
 :root {
-    --black: #000;
-    --white: #fff;
+    --dark: #000;
+    --light: #ddd;
 }
 
 
 body {
-    background-color: #ddd;
+    background-color: (--light);
 }
