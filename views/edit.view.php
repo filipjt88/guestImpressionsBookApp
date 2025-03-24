@@ -43,19 +43,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_message'])) {
 <html lang="sr">
 <head>
     <meta charset="UTF-8">
-    <title>Uredi poruku</title>
+    <title>Edit message</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container mt-5">
-        <h2>Uredi poruku</h2>
+        <h2>Edit message</h2>
         <form action="" method="post">
             <div class="mb-3">
                 <label for="message" class="form-label">Poruka:</label>
                 <textarea name="message" class="form-control"><?= htmlspecialchars($message['message']) ?></textarea>
             </div>
-            <button type="submit" name="update_message" class="btn btn-primary">💾 Sačuvaj izmene</button>
-            <a href="my_messages.php" class="btn btn-secondary">🔙 Nazad</a>
+            <button type="submit" name="update_message" class="btn btn-primary">💾 Save</button>
+            <a href="my_messages.php" class="btn btn-secondary">🔙 Back</a>
         </form>
     </div>
 </body>
